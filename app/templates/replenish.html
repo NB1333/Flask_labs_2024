@@ -1,0 +1,7 @@
+<h1>Replenish Balance</h1>
+<form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.amount.label }} {{ form.amount() }}
+    {{ form.currency.label }} {{ form.currency() }}
+    {{ form.submit() }}
+</form>

@@ -1,0 +1,5 @@
+<h1>User Profile</h1>
+<p>Balance in UAH: {{ user.uah_balance }}</p>
+<p>Balance in USD: {{ user.usd_balance }}</p>
+<a href="{{ url_for('replenish') }}">Replenish Balance</a>
+<a href="{{ url_for('exchange') }}">Exchange Currency</a>

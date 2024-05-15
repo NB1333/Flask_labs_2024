@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchange Currency</title>
+</head>
+<body>
+    <h1>Exchange Currency</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="post">
+        {{ form.hidden_tag() }}
+        {{ form.from_currency.label }} {{ form.from_currency() }}
+        {{ form.to_currency.label }} {{ form.to_currency() }}
+        {{ form.amount.label }} {{ form.amount() }}
+        {{ form.submit() }}
+    </form>
+    <p><a href="{{ url_for('index') }}">Go back to the profile page</a></p>
+</body>
+</html>
